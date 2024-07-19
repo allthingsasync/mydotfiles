@@ -1,0 +1,28 @@
+(add-to-list 'default-frame-alist
+             '(font . "Jetbrains Mono-13"))
+
+;; No Splash Screen
+(setq inhibit-splash-screen t)
+
+;; Deactivate menu-bar, tool-bar and scroll-bar
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+(set-fringe-mode 0)
+
+;; Lines and columns
+(global-linum-mode t)
+(setq linum-format "%d ")
+
+(column-number-mode t)
+(show-paren-mode t)
+(size-indication-mode t)
+(setq-default tab-width 4)
+
+;; Smooth scrolling
+(setq mouse-wheel-scroll-amount '(3 ((shift) . 3))) ;; One line at a time
+(setq mouse-wheel-progressive-speed nil)            ;; Don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't)                  ;; Scroll window under mouse
+(setq scroll-step 1)                                ;; Keyboard scroll one line at a time
+(setq scroll-margin 4)                              ;; Always 4 lines above/below cursor
